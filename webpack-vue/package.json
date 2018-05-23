@@ -1,28 +1,78 @@
 {
-  "name": "webpack-vue",
+  "name": "webpacktest",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "description": "test",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch",
+    "build": "webpack --env.production"
   },
   "author": "heh",
   "license": "ISC",
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "extends": [
+      "eslint:recommended",
+      "mysticatea",
+      "mysticatea/modules",
+      "plugin:vue/recommended"
+    ],
+    "plugins": [
+      "node"
+    ],
+    "env": {
+      "browser": false
+    },
+    "globals": {
+      "applicationCache": false,
+      "atob": false,
+      "btoa": false,
+      "console": false,
+      "document": false,
+      "location": false,
+      "window": false
+    },
+    "rules": {
+      "skipComments": true,
+      "node/no-extraneous-import": "error",
+      "node/no-missing-import": "error",
+      "node/no-unpublished-import": "error",
+      "vue/html-indent": [
+        "error",
+        4
+      ],
+      "vue/max-attributes-per-line": "off",
+      "require-noopener": "error"
+    }
+  },
   "devDependencies": {
     "clean-webpack-plugin": "0.1.19",
-    "copy-webpack-plugin": "4.5.1",
     "css-loader": "0.28.11",
+    "eslint-config-mysticatea": "13.0.2",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-vue": "4.5.0",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
-    "file-loader": "1.1.11",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
+    "lodash": "4.17.5",
     "node-sass": "4.8.3",
-    "resolve-url-loader": "2.3.0",
+    "optimize-css-assets-webpack-plugin": "4.0.0",
     "sass-loader": "7.0.1",
-    "style-loader": "0.21.0",
-    "url-loader": "1.0.1",
+    "style-loader": "0.20.3",
+    "vue-loader": "14.2.2",
+    "vue-template-compiler": "2.5.16",
     "webpack": "4.6.0",
-    "webpack-cli": "2.0.15",
+    "webpack-cli": "2.0.14",
     "webpack-dev-server": "3.1.3"
+  },
+  "dependencies": {
+    "px2rem-loader": "0.1.9",
+    "vue": "2.5.16",
+    "vue-router": "3.0.1"
   }
 }
